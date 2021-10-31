@@ -447,7 +447,7 @@
 
             <div class="row">
                 <div class="col-lg-6 col-md-12 col-sm-12">
-                    <h1 id='username'>All Rounder Website for VITIANS!</h1>
+                    <h1 id='userName'>All Rounder Website for VITIANS!</h1>
                     <div class="row">
                         <button type="button" target='' class="col-md btn btn-dark btn-lg download-button"
                             style="margin-left: 20%;max-width: max-content;" href="#" data-target="#login"
@@ -462,44 +462,45 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <img id="ProPicSrc" src="highlights-document-browser-iphone.png" alt="iphone-mockup"
-                        class="iphone-img rotate-25" />
-                </div>
+                        class="iphone-img rotate-25" />                
             </div>
+            <!-- <button onclick="signOut()">sign out</button> -->
         </div>
-    </section>
-    <script> 
-        function onSignIn(googleUser)
-        {    
-            console.log('working')
-            let getBasicProfile= googleUser.getBasicProfile()
-            console.log('welcome' + JSON.stringify(getBasicProfile))
-        
-            let userDetails = document.querySelector('#userName')
-        
-             userDetails.textContent= getBasicProfile.getName()
-             let imgsrc = document.querySelector('#ProPicSrc')
-            imgsrc.src= getBasicProfile.getImageUrl()
+        <script> 
+            function onSignIn(googleUser)
+            {    
+                console.log('working')
+                let getBasicProfile= googleUser.getBasicProfile()
+                console.log('welcome' + JSON.stringify(getBasicProfile))
             
-            let signOutbtn = document.getElementById('divSignOut')
-            signOutbtn.innerHTML =` <button id="btnSignOut" type="button" target='' class="btn btn-lg btn-outline-light download-button" onclick='signOut()'> 
-                            <i class="fa fa-sign-out"></i> Sign Out
-                        </button>`
+                let userDetails = document.querySelector('#userName')
             
-        }
-        
-        
-            function signOut()
-            {
-                gapi.auth2.getAuthInstance().signOut().then(function() {
-                    console.log('you are signed out')
-                    userName.textContent= 'you are signed out'
-                    let imgsrce = document.querySelector('#ProPicSrc')
-                    imgsrce.src = 'highlights-document-browser-iphone.png'
-                })
+                 userDetails.textContent= getBasicProfile.getName()
+                 let imgsrc = document.querySelector('#ProPicSrc')
+                imgsrc.src= getBasicProfile.getImageUrl()
+                
+                let signOutbtn = document.getElementById('divSignOut')
+                signOutbtn.innerHTML =` <button id="btnSignOut" type="button" target='' class="btn btn-lg btn-outline-light download-button" onclick='signOut()'> 
+                                <i class="fa fa-sign-out"></i> Sign Out
+                            </button>`
+                
             }
-        
-        
-        </script> 
+            
+            
+                function signOut()
+                {
+                    gapi.auth2.getAuthInstance().signOut().then(function() {
+                        console.log('you are signed out')
+                        userName.textContent= 'you are signed out'
+                        let imgsrce = document.querySelector('#ProPicSrc')
+                        imgsrce.src = 'highlights-document-browser-iphone.png'
+                    })
+                }
+            
+            
+            </script>
+    </section>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
