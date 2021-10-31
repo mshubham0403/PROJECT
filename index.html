@@ -491,12 +491,12 @@
                 {
                     gapi.auth2.getAuthInstance().signOut().then(function() {
                         console.log('you are signed out')
+                        let signOutbtn = document.getElementById('divSignOut')
+                        signOutbtn.removeChild(signOutbtn.firstChild)
                         userName.textContent= 'you are signed out'
                         let imgsrce = document.querySelector('#ProPicSrc')
                         imgsrce.src = 'highlights-document-browser-iphone.png'
-                        let signOutbtn = document.getElementById('divSignOut')
-                        signOutbtn.removeChild(signOutbtn.firstChild)
-
+                       
                     })
                 }
             
