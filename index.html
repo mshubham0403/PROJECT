@@ -462,7 +462,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12">
                     <img id="ProPicSrc" src="highlights-document-browser-iphone.png" alt="iphone-mockup"
-                        class="iphone-img rotate-25" />                
+                        class="iphone-img" />                
             </div>
             <!-- <button onclick="signOut()">sign out</button> -->
         </div>
@@ -494,6 +494,9 @@
                         userName.textContent= 'you are signed out'
                         let imgsrce = document.querySelector('#ProPicSrc')
                         imgsrce.src = 'highlights-document-browser-iphone.png'
+                        let signOutbtn = document.getElementById('divSignOut')
+                        signOutbtn.removeChild(signOutbtn.firstChild)
+
                     })
                 }
             
