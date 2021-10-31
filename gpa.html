@@ -28,22 +28,17 @@
       color: white;
     }
 
-    #course-row {
+   
+    .inp_headers
+    {
       font-size: 20px;
       font-weight: bolder;
-      margin-left: -2%;
-    }
-
-    #credit-row {
-      font-size: 20px;
-      font-weight: bolder;
-      margin-left: 13%;
-    }
-
-    #grade-row {
-      font-size: 20px;
-      font-weight: bolder;
-      margin-left: 8%;
+      border: none;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 5px;
+      width: 20%;
+      text-align: center;
     }
 
     .calculator-box {
@@ -248,9 +243,10 @@
 
       <div id="courses">
         <form class="key-0 ">
-          <p> <label id="course-row" for="Course">Courses:</label>
-            <label id="credit-row" for="credit-units">Credit Units:</label>
-            <label id="grade-row" for="grade">Grades: </label>
+          <p> <label class="inp_headers" for="Course">Courses:</label>
+            <label class="inp_headers" for="credit-units">Credits:</label>
+            <label class="inp_headers" for="grade">Grades: </label>
+            <!-- <label class="inp_headers" for="cgpa">CGPA </label> -->
           </p>
           <input type="text" placeholder="Course" class="courses key-0" required />
 
@@ -266,7 +262,7 @@
             <option value="5">E</option>
             <option value="0">F</option>
           </select>
-        </form>
+          
       </div>
 
       <div class="btns">

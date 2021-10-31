@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>VIT Inventory</title>
+    <!--Google Fonts-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:ital,wght@1,300&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-image: linear-gradient(90deg, #1778f2, #BBC2C8);
+            color: white;
+        }
+
+        #semester-row {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-left: -2%;
+        }
+
+        #credit-row {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-left: 13%;
+        }
+
+        #GPA-row {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-left: 11%;
+        }
+
+        .calculator-box {
+            width: 50%;
+            height: auto;
+            border: 2px solid #3D515C;
+            margin: 100px auto;
+            text-align: center;
+            flex-direction: row;
+        }
+
+
+
+        @media screen and (max-width: 1200px) {
+            .calculator-box {
+                width: 70%;
+            }
+        }
+
+
+        @media screen and (max-width: 950px) {
+            .calculator-box {
+                width: 75%;
+            }
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .calculator-box {
+                width: 90%;
+            }
+        }
+
+
+        .head_cgpaest {
+            padding: 15px;
+            font-size: 40px;
+            text-align: center;
+            border: 1px solid #3D515C;
+            background-color: #3D515C;
+        }
+
+        .head_cgpaest:hover {
+            padding: 15px;
+            font-size: 40px;
+            text-align: center;
+            border: 1px solid #3D515C;
+            background-color: #1778f2;
+            color: #000;
+        }
+
+        #mainp {
+            padding: 20px;
+            font-size: 1rem;
+            color: black;
+            text-align: center;
+        }
+
+        #courses,
+        form {
+            color: black;
+            padding-left: 10px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        input {
+            border: none;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 20%;
+            text-align: center;
+            display: inline-block;
+            flex-direction: column;
+    
+        }
+         /* .disp_row
+        {
+            border-color: black;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 100%;
+            max-height: 50px;
+            color: black;
+        }  */
+        .value_box {
+            border-color: black;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 20%;
+            text-align: center;
+            text-decoration: solid;
+            background-color: rgb(141, 192, 250);
+            color: black;
+            flex-direction: column;
+            display: inline-block;
+
+        }
+
+        select {
+            padding: 15px;
+            border: none;
+            border-radius: 7.5px;
+            width: 20%;
+
+        }
+
+        button {
+            width: max-content;
+            height: 40px;
+            padding: 1px;
+            margin: 5px auto;
+            /*   margin-left: 10px; */
+            border-width: 3px;
+            border-radius: 10%;
+            border-style: solid;
+            max-width: max-content;
+            background-color: #1778f2;
+        }
+
+        button:hover {
+            width: max-content;
+            height: 40px;
+            padding: 1px;
+            margin: 5px auto;
+            border-width: 3px;
+            border-radius: 10%;
+            border-style: solid;
+            color: #fff;
+            background: #000;
+            border-color: #000;
+        }
+
+        .btns {
+            width: 100%;
+            padding: 10px;
+            display: inline-block;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .lastp {
+            border: 1px solid #3D515C;
+            background-color: #3D515C;
+        }
+
+        .lastp p {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .lastp p:hover {
+            background-color: #1778f2;
+            color: #000;
+        }
+
+        .inp_headers {
+            font-size: 20px;
+            font-weight: bolder;
+            border: none;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 20%;
+            text-align: center;
+            color: black;
+        }
+        #input_content
+        {
+            max-height: max-content;
+        }
+        .new_row
+        {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <section id="title">
+        <div class="container-fluid">
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <i class="fas fa-graduation-cap fa-5x"></i>
+                <a class="navbar-brand" href="">VIT-Inventory</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="gpa.html">GPA CALCULATOR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cgpa.html">CGPA CALCULATOR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="attendance.html">ATTENDANCE CALCULATOR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">VITB CLUBS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">CODING RESOURCES</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+
+            <div class="row">
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <h1>All Rounder Website for VITIANS!</h1>
+                    <button type="button" class="btn btn-dark btn-lg download-button" style="margin-left: 20%;">
+                        <i class="fas fa-user-plus"></i> SIGN UP
+                    </button>
+                    <button type="button" class="btn btn-lg btn-outline-light download-button">
+                        <i class="fas fa-sign-in-alt"></i> LOGIN
+                    </button>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12">
+                    <img src="highlights-document-browser-iphone.png" alt="iphone-mockup"
+                        class="iphone-img rotate-25" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="cgpaest_form">
+
+
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="calculator-box">
+            <h1 class="head_cgpaest">CGPA Estimator</h1>
+            <p id="mainp">
+                This CGPA Estimator Calculator is based on the VIT grading
+                system.
+            </p>
+            <div id="input_content">
+                <form name="form1" class="key-0 ">
+                    <div id="inp_row 1">
+                        <p> <label class="inp_headers" for="desired">Desired CGPA :</label>
+                            <label class="inp_headers" for="current">Current CGPA:</label>
+                            <label class="inp_headers" for="credits_taken">Credits taken: </label>
+                            <!-- <label class="inp_headers" for="cgpa">CGPA </label> -->
+                        </p>
+                        <input type="number" class="credit-units key-0" placeholder="" value="" id="desired_cgpa"
+                            required />
+                        <input type="number" class="credit-units key-0" placeholder="" value="" id="current" required />
+                        <input type="number" class="credit-units key-0" placeholder="" value="" id="credits_taken"
+                            required />
+
+                    </div>
+                    
+                </form>
+           
+                <!-- <button class="button" onclick="dispbox(1)">Calculate</button> -->
+               
+                <button class="button" onclick="calculate()">Calculate</button>
+            </div>
+
+            <div id='result'></div>
+            <div class="lastp" id="last_p">
+                <p id="cgpa-final">Required CGPA in this semester:</p>
+                <div id="extrabtn"></div>
+            </div>
+        </div>
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</section>
+<section id="footer">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <h1>Join our Telegram Channel!<i class="fab fa-telegram-plane"></i></h1>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12">
+            <img src="ECS_15_CX-Careers_01-e1571300855316.png" alt="iphone-mockup" width="350" height="350">
+        </div>
+    </div>
+    </div>
+</section>
+</body>
+
+</html>
