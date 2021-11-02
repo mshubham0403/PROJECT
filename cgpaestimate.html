@@ -581,6 +581,22 @@ function calcgpa_ChosenSem()
        cgpa_d.textContent = cgpa
        prev_cgpa_cho = cgpa
        credit_tot_init+=credits
+
+       if (credit_tot_init>168 && count_w<1){
+        {count_w++
+    let alert = document.createElement('div')
+    alert.setAttribute('id' , 'alert-cre')
+
+ alert.innerHTML = `<div class="alert alert-warning" role="alert">
+             Total credits more than 168.
+              </div>`
+              play_area_main.appendChild(alert)
+              setTimeout(() => {
+                  remalert = document.getElementById('alert-cre')
+                  remalert.remove()
+              }, 6000);
+}
+       }
      
    
             }
@@ -589,7 +605,7 @@ function calcgpa_ChosenSem()
             // 
             // {let key = 0 ;
             // let input_html =' <input type="number" class="credit-units key-${key}" placeholder="Credit Units" id="inputt" value="" required />'}
-
+            let count_w = 0;
             var crecomp;
             var gpa_scored;
             var prev_cgpa;
