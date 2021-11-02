@@ -467,7 +467,7 @@
 
             function add_row()
          
-{  this_sem++
+{ if(this_sem<9){ this_sem++
     chos_row_counter++
      let new_row = document.createElement('div')
                 new_row.setAttribute('id' , `sem-${chos_row_counter}`)
@@ -476,6 +476,16 @@
    new_row.innerHTML = o
    let form1 = document.getElementById('form1')
    form1.appendChild(new_row)
+}
+else{
+    let alert = document.createElement('div')
+    alert.setAttribute('id' , 'alert')
+
+ alert.innerHTML = `<div class="alert alert-warning" role="alert">
+              There cannot be more than 8 semesters.
+              </div>`
+              play_area_main.appendChild(alert)
+}
 }
            
    
@@ -497,7 +507,7 @@
                 let row = 1;
                 gpa_scored = 10;
                 current_cgpa_calc = interim_cgpa(gpa_scored);
-                while (current_cgpa_calc < desired && crecomp <= 168) {
+                while (current_cgpa_calc < desired && crecomp <= 168 && this_sem<9) {
                     dispbox(row);
                     row++;
                     this_sem++;
@@ -594,6 +604,7 @@ function calcgpa_ChosenSem()
             var this_sem;
             var chos_row_counter=1;
             let final_p = document.getElementById('cgpa-final')
+            let play_area_main =document.getElementById('input_content')
 
 
             function calculate() {
