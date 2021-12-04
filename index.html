@@ -403,13 +403,23 @@
             align-items: center;
             margin: 0 5px;
             height: 40px;
-            width: 40px;
-        }
+            width: 40px;}
+
+            #preloader{
+    background:#000 url(bold-preloader.gif) no-repeat center;
+    background-size:15%;
+    height:100%;
+    width:100%;
+    position: fixed;
+    z-index:100;
+}
+        
     </style>
 </head>
 
 <body>
     <section id="title">
+        <div id="preloader"></div>
         <div class="container-fluid">
 
             <!--navigation bar-->
@@ -822,6 +832,12 @@
         </div>
         </div>
     </section>
+    <script>
+        var loader=document.getElementById("preloader");
+        window.addEventListener("load",function(){
+               loader.style.display="none";
+        })
+    </script>
 </body>
 
 </html>
