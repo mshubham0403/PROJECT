@@ -8,6 +8,7 @@
     <meta name="google-signin-client_id"
         content="939505258478-9mdiuh37veisgnfpdav6esltge7tcmk5.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
     <link rel="stylesheet" href="styles.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -153,17 +154,18 @@ input,select{
         {    
             console.log('working')
             let getBasicProfile= googleUser.getBasicProfile()
-            console.log('welcome' + JSON.stringify(getBasicProfile))
+            console.log('welcome' + JSON.stringify(getBasicProfile.getName()))
         
-            let userDetails = document.querySelector('#userName')
+            // let userDetails = document.querySelector('#userName')
             let userReg = documents.querySelector('#Registration_Number')
-            let whole_string = JSON.stringify(getBasicProfile)
+            let whole_string = JSON.stringify(getBasicProfile.getName())
             let array_of_user = whole_string.split(' ');
             let reg_no = array_of_user[2];
-            userReg.textContent = reg_no;
+            userReg.textContent = getBasicProfile.getName();
+            console.log(reg_no)
             
         
-             userDetails.textContent= getBasicProfile.getName()
+            //  userDetails.textContent= getBasicProfile.getName()
              let imgsrc = document.querySelector('#ProPicSrc')
             imgsrc.src= getBasicProfile.getImageUrl()
             
