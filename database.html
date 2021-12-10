@@ -83,6 +83,20 @@ input,select{
     margin-bottom: 5px;
     border-radius: 20px;
 }
+.value_box {
+            border-color: black;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            width: 20%;
+            text-align: center;
+            text-decoration: solid;
+            background-color: rgb(141, 192, 250);
+            color: black;
+            flex-direction: column;
+            display: inline-block;
+
+        }
     </style>
         
 
@@ -218,7 +232,7 @@ input,select{
         <div class="con">
         <form action="form.php" method="post">
         <label for="Registration_Number">Registration_Number</label>
-               <div class="box" type="text" placeholder="Reg.No "  name="Registration_Number" id="Registration_Number" ></div><br>
+               <div class="value_box" type="text" placeholder="Reg.No "  name="Registration_Number" id="Registration_Number" ></div><br>
                <label for="teacher">Teacher Name</label>
                <select id="teacher" name="teacher" required>
                    <option value="" disabled selected hidden>Name of the teacher to be reviewed</option>
