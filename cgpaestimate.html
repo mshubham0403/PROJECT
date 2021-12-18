@@ -399,6 +399,8 @@
 
            function custom_tch()
             {
+                let mb = document.getElementById('main_box');
+  removeAllChildNodes(mb);
                 console.log('custom');
               let  labels = document.createElement('div')
                 labels.classList.add('label_row')
@@ -491,6 +493,8 @@ else{
    
    
    function defaultCalc() {
+    let mb = document.getElementById('main_box')
+  removeAllChildNodes(mb);
                 console.log('default')
                 console.log(desired)
 
@@ -506,7 +510,7 @@ else{
                 play_area.appendChild(labels)
                 let row = 1;
                 gpa_scored = 10;
-                current_cgpa_calc = interim_cgpa(gpa_scored);
+                current_cgpa_calc = interim_cgpa(gpa_scored).toFixed(2);
                 while (current_cgpa_calc < desired && crecomp <= 168 && this_sem<9) {
                     dispbox(row);
                     row++;
