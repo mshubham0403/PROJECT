@@ -399,7 +399,8 @@
 
            function custom_tch()
             {
-               
+                let mb = document.getElementById('main_box');
+  removeAllChildNodes(mb);
                 console.log('custom');
               let  labels = document.createElement('div')
                 labels.classList.add('label_row')
@@ -492,7 +493,6 @@ else{
    
    
    function defaultCalc() {
-   
                 console.log('default')
                 console.log(desired)
 
