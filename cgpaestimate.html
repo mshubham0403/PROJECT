@@ -234,7 +234,7 @@
 
             <nav class="navbar navbar-expand-lg navbar-light">
                 <i class="fas fa-graduation-cap fa-5x"></i>
-                <a class="navbar-brand" href="index.html">VIT-Inventory</a>
+                <a class="navbar-brand" href="indexS.html">VIT-Inventory</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo">
                     <span class="navbar-toggler-icon"></span>
@@ -398,8 +398,8 @@
 
 
            function custom_tch()
-            {
-                
+            { document.getElementById('btns').style.display = 'none'
+     
                 console.log('custom');
               let  labels = document.createElement('div')
                 labels.classList.add('label_row')
@@ -492,6 +492,7 @@ else{
    
    
    function defaultCalc() {
+    document.getElementById('btns').style.display = 'none'
                 console.log('default')
                 console.log(desired)
 
@@ -507,7 +508,7 @@ else{
                 play_area.appendChild(labels)
                 let row = 1;
                 gpa_scored = 10;
-                current_cgpa_calc = interim_cgpa(gpa_scored).toFixed(2);
+                current_cgpa_calc = interim_cgpa(gpa_scored);
                 while (current_cgpa_calc < desired && crecomp <= 168 && this_sem<9) {
                     dispbox(row);
                     row++;
@@ -554,6 +555,7 @@ else{
                 whereas                with custom you can select the no.of credits taken`
                 let btnsDiv = document.createElement("div");
                 btnsDiv.classList.add('btns')
+                btnsDiv.setAttribute('id', 'btns')
                 btnsDiv.innerHTML = `  <button class="buttonn" onclick="defaultCalc()">Default</button>
         <button class="buttonn" onclick="custom_tch()">Custom</button>
         `
