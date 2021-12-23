@@ -4,11 +4,11 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
-      "temp.html"
-"attendance.html"
-"cgpa.html"
-"gpa.html"
+      "**/node_modules/**",
+      "temp.html",
+"attendance.html",
+"cgpa.html",
+"gpa.html",
 "cgpaestimate.html"
 
     ]
