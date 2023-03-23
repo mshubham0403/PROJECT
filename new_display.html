@@ -147,28 +147,9 @@ input,select{
         </div>
     </section>
     <section id="body1">
-        <?php
-    $teacher = $_POST['teacher'];
-    $sql = "SELECT AVG(ratingvalue) AS avgr FROM teachers WHERE teachername = '$teacher' ";
-    $connection= mysqli_connect("localhost","root", "",'teacher_review');
-    if($connection)
-    {
-        echo 'connection good';
-    }
-    else
-    {
-      echo 'connection failed because'. mysqli_connect_error();
-    }
-    
-$result_d = mysqli_query($connection,$sql);
-    $score = mysqli_fetch_assoc($result_d);
-    
-    
-    mysqli_free_result($result_d);
-    mysqli_close($connection);
-    ?>
+       
         <div class="container">
-            <form action ="/displayform.php" method = "post">
+            <form action ="/" method = "post">
             <p>Faculty of whom you want to get the review</p>
             <label for="teacher"></label>
                <select id="teacher" name="teacher" required>
@@ -184,12 +165,7 @@ $result_d = mysqli_query($connection,$sql);
             </div >
             </form>
             <div id="result" class='value_box'>The average rating for this teacher is:<div id="avgr_value">
-                <?php
-foreach($score as $sc)
-{
- print_r($sc);
-}
-?>
+               
     </div>   
  </div>
     </div>
